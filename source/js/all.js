@@ -29,7 +29,6 @@ $(function(){
         $('#loading').hide();
         clearInterval(loadingimgchange);
     });
-
     //前置頁
     pre_map.click(function(){
         //第二次打開能關地圖
