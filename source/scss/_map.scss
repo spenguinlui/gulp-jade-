@@ -1,3 +1,4 @@
+@import "variables";
 .map {
   display: none;
   @media screen and (min-width:600px){
@@ -23,6 +24,10 @@
       z-index: 1;
       &.ap {
         &:hover {
+          a {
+            color: $textColor;
+            text-decoration: none;
+          }
           transition: 0.2s ease-in-out;
           transform-origin: (50,50);
           transform: scale(1.2);
@@ -48,6 +53,10 @@
       vertical-align: middle;
       .place {
         display: none;
+        position: absolute;
+        img {
+          width: 100%;
+        }
         @media screen and (min-width:600px){
           display: block;
         }
@@ -58,7 +67,7 @@
 @mixin ground ($w, $h, $img) {
   width: #{$w}px;
   height: #{$h}px;
-  background: url(images/taiwan/img-#{$img}.png);
+  background: url(../images/taiwan/img-#{$img}.png);
   background-size: contain;
 }
 #north {
@@ -88,57 +97,57 @@
 }
 @for $i from 1 through 6 {
   #n_title#{$i} {
-    left: nth($ntl, $i)px;
-    top: nth($ntt, $i)px;
+    left: nth($ntl, $i)+px;
+    top: nth($ntt, $i)+px;
   }
 }
 @for $i from 1 through 6 {
   #e_title#{$i} {
-    left: nth($etl, $i)px;
-    top: nth($ett, $i)px;
+    left: nth($etl, $i)+px;
+    top: nth($ett, $i)+px;
   }
 }
 @for $i from 1 through 6 {
   #m_title#{$i} {
-    left: nth($mtl, $i)px;
-    top: nth($mtt, $i)px;
+    left: nth($mtl, $i)+px;
+    top: nth($mtt, $i)+px;
   }
 }
 @for $i from 1 through 6 {
   #s_title#{$i} {
-    left: nth($stl, $i)px;
-    top: nth($stt, $i)px;
+    left: nth($stl, $i)+px;
+    top: nth($stt, $i)+px;
   }
 }
 @for $i from 1 through 6 {
   #n_place#{$i} {
-    left: nth($npl, $i)px;
-    top: nth($npt, $i)px;
-    width: nth($npl, $i)px;
-    height: nth($npt, $i)px;
+    left: nth($npl, $i)+px;
+    top: nth($npt, $i)+px;
+    width: nth($npw, $i)+px;
+    height: nth($nph, $i)+px;
   }
 }
 @for $i from 1 through 6 {
   #e_place#{$i} {
-    left: nth($epl, $i)px;
-    top: nth($ept, $i)px;
-    width: nth($epl, $i)px;
-    height: nth($ept, $i)px;
+    left: nth($epl, $i)+px;
+    top: nth($ept, $i)+px;
+    width: nth($epw, $i)+px;
+    height: nth($eph, $i)+px;
   }
 }
 @for $i from 1 through 6 {
   #m_place#{$i} {
-    left: nth($mpl, $i)px;
-    top: nth($mpt, $i)px;
-    width: nth($mpl, $i)px;
-    height: nth($mpt, $i)px;
+    left: nth($mpl, $i)+px;
+    top: nth($mpt, $i)+px;
+    width: nth($mpw, $i)+px;
+    height: nth($mph, $i)+px;
   }
 }
 @for $i from 1 through 6 {
   #s_place#{$i} {
-    left: nth($spl, $i)px;
-    top: nth($spt, $i)px;
-    width: nth($spl, $i)px;
-    height: nth($spt, $i)px;
+    left: nth($spl, $i)+px;
+    top: nth($spt, $i)+px;
+    width: nth($spw, $i)+px;
+    height: nth($sph, $i)+px;
   }
 }

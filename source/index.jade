@@ -10,30 +10,16 @@ html(lang='en')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin='anonymous')
     script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy', crossorigin='anonymous')
     script(src='https://code.jquery.com/jquery-3.3.1.js', integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=', crossorigin='anonymous')
-    script(src='jquery.rwdImageMaps.min.js')
-    link(rel='stylesheet', href='common.css')
-    link(rel='stylesheet', href='map.css')
-    script(src='index.js')
-    style.
-      .map {
-      display: none;
-      }
-      .tp {
-      display: none;
-      }
-      #bear {
-      display: none;
-      }
-      nav > ul {
-      display: none;
-      }
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js')
+    link(rel='stylesheet', href='css/all.css')
+    script(src='js/all.js')
   body
-    #loading
-      #loading_b
-        #loadingimg
+    #loading.loading
+      #loading_b.loading_b
+        #loadingimg.loadingimg
           img.w-100(src='images/middle/middle6.png')
-        #loadingtext.w-100 loading...
-    #prepage.container-fluid
+        #loadingtext.loadingtext.w-100 loading...
+    #prepage.prepage.container-fluid
       h1 台灣好好玩
       span.vtext.text1 ＃上班持續厭世
       span.vtext.text2 快排好假期充充電吧！
@@ -46,7 +32,7 @@ html(lang='en')
           area(title='', name='#nav_s', href='#south', shape='poly', coords='131,824,130,864,132,892,123,907,112,929,111,951,111,975,104,989,105,1008,126,1030,139,1047,144,1065,149,1086,152,1098,168,1134,176,1151,180,1179,189,1204,200,1219,214,1246,248,1269,285,1289,312,1311,333,1350,358,1387,365,1415,365,1453,368,1481,377,1485,388,1486,403,1495,424,1498,427,1490,422,1476,428,1467,438,1458,446,1438,447,1417,444,1392,440,1367,437,1362,419,1363,411,1350,400,1349,396,1338,393,1320,384,1308,376,1300,378,1288,382,1282,389,1283,392,1280,389,1267,388,1262,384,1256,381,1251,378,1243,378,1236,372,1226,372,1219,376,1210,375,1198,376,1190,384,1184,389,1170,409,1160,430,1156,438,1145,446,1133,434,1113,424,1105,416,1090,410,1084,411,1070,407,1058,405,1049,410,1041,419,1033,426,1016,426,995,424,981,432,969,445,952,449,945,451,929,451,925,460,915,473,911,481,911,487,904,485,895,480,885,476,877,472,870,475,856,483,851,482,849,476,842,467,839,451,839,438,836,432,834,409,834,402,825,399,811,398,803,401,790,402,784,398,780,383,779,376,779,371,786,364,789,347,782,333,779,314,778,295,780,286,781,278,773,272,764,262,775,246,773,232,777,219,778,209,788,199,798,178,810,164,818,133,822', style='outline:none;', target='_self')
           area(title='', name='#nav_m', href='#middle', shape='poly', coords='331,407,306,453,286,483,274,496,273,516,269,528,256,544,249,555,249,567,236,581,221,591,212,609,206,623,195,641,191,651,193,667,204,676,193,688,173,696,162,711,147,736,135,756,134,783,131,814,132,823,145,819,159,819,174,814,184,804,193,806,215,788,233,779,251,777,265,775,272,768,281,774,293,779,322,778,353,787,371,787,379,782,395,782,403,784,398,794,400,817,409,833,429,834,445,838,461,838,476,839,484,844,493,833,499,827,502,817,503,813,515,814,526,811,535,798,544,780,562,758,569,746,571,733,565,721,565,706,566,692,567,674,569,661,576,643,581,630,579,606,579,590,585,579,596,568,601,562,594,554,586,543,585,529,594,517,604,515,619,516,616,505,618,490,629,476,636,464,644,453,637,450,626,446,609,437,599,427,592,421,574,421,566,417,566,407,557,397,551,389,511,386,503,383,499,376,498,370,496,351,483,349,470,339,455,327,447,318,447,312,439,304,428,294,424,287,418,283,410,289,407,302,387,324,367,338,358,348,348,366,340,389', style='outline:none;', target='_self')
           area(title='', name='#nav_e', href='#east', shape='poly', coords='777,460,760,464,745,463,733,457,726,452,715,458,711,465,708,469,695,468,672,460,659,457,651,454,645,455,636,467,625,482,617,493,618,508,618,515,603,515,593,520,587,528,585,541,592,553,599,560,595,571,585,584,577,597,580,614,580,633,571,651,568,691,566,716,571,727,571,741,555,772,532,802,526,815,512,815,501,817,501,826,496,834,486,845,486,852,476,862,475,877,478,884,488,894,486,906,481,913,469,914,460,919,453,926,452,942,446,952,430,976,426,985,427,1007,426,1020,423,1032,413,1043,406,1050,411,1069,414,1083,419,1096,429,1115,441,1125,448,1135,438,1148,427,1159,405,1165,391,1174,385,1180,383,1191,375,1199,375,1209,376,1223,382,1237,381,1252,388,1266,391,1280,382,1286,377,1291,382,1304,390,1313,395,1325,397,1342,402,1352,412,1352,419,1367,437,1367,440,1362,442,1337,444,1309,458,1288,478,1256,483,1221,492,1194,503,1180,532,1160,553,1127,567,1099,569,1111,569,1073,596,1050,623,1015,647,967,661,914,687,780,696,735,710,670,727,601,725,568,740,550,743,528,759,508,780,481', style='outline:none;', target='_self')
-    #backblock
+    #backblock.backblock
       a.back(href='#prepage')
         .backtext Back
     .cmotag
@@ -67,7 +53,7 @@ html(lang='en')
           img(src='images/east/tag.png')
           | 東部
     nav
-      #rail
+      #rail.rail
       ul#nav_n
         li.nav_title.nav1
           a(href='#north') 首頁
@@ -170,9 +156,9 @@ html(lang='en')
                 img(src='images/north/north6.png')
       #east.map.momap
         .tape_l.etape
-          img(src='../travel_map/images/east/tape.png')
+          img(src='images/east/tape.png')
         .tape_r.etape
-          img(src='../travel_map/images/east/tape.png')
+          img(src='images/east/tape.png')
         .title
           #e_title1.stitle.ap
             a(href='#e6_page') 台東森林公園
@@ -208,9 +194,9 @@ html(lang='en')
                 img(src='images/east/east6.png')
       #middle.map.momap
         .tape_l.mtape
-          img(src='../travel_map/images/middle/tape.png')
+          img(src='images/middle/tape.png')
         .tape_r.mtape
-          img(src='../travel_map/images/middle/tape.png')
+          img(src='images/middle/tape.png')
         .title
           #m_title1.stitle.ap
             a(href='#m2_page') 中社
@@ -246,9 +232,9 @@ html(lang='en')
                 img(src='images/middle/middle6.png')
       #south.map.momap
         .tape_l.stape
-          img(src='../travel_map/images/south/tape.png')
+          img(src='images/south/tape.png')
         .tape_r.stape
-          img(src='../travel_map/images/south/tape.png')
+          img(src='images/south/tape.png')
         .title
           #s_title1.stitle.ap
             a(href='#s5_page') 墾丁公園
@@ -7254,5 +7240,5 @@ html(lang='en')
                     br
                     |                                     自行開車前往者，可沿中正路往濱海公路方向行駛，至八斗子後轉入八斗街，即可看見指標。
     // <div id="bear" class="bear"><img src="images/bear.png"></div>
-    a#gotop(href='') TOP
+    a#gotop.gotop(href='') TOP
     footer 本網頁僅供練習用途，將不用作任何商業營利用途。

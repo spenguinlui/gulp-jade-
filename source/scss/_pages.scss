@@ -21,7 +21,7 @@
     width: 100%;
     color: $textColor;
     position: relative;
-    background: url(images/layout/notebg1.png);
+    background: $notebg;
     .content {
       padding: 20px 10%;
       .btitle {
@@ -162,7 +162,7 @@
       }    
       .content {
         padding: 15px;
-        background: url(images/layout/notebg1.png);
+        background: $notebg;
         box-shadow: $shadow 5px 5px 10px;
         .text {
           text-align: right

@@ -27,7 +27,7 @@
 /*----------------loading end----------------*/
 /*----------------prepage start----------------*/
 .prepage {
-  background: url(images/layout/notebg1.png) repeat;
+  background: $notebg;
   height: 900px;
   position: absolute;
   z-index: 100;
@@ -97,17 +97,18 @@
   width: 100vw;
   height: 60px;
   position: fixed;
+  left: 0;
   top: 0;
   z-index: 20;
   overflow: hidden;
   display: none;
   transition: all .5s ease-in-out;
   .backtext {
+    background: $opacity_8;
     line-height: 60px;
     text-align: center;
     color: $white;
     font-size: 32px;
-    background: $opacity_8;
     transform-origin: center;
     &:active {
       transform: scale(1.3);
@@ -140,11 +141,12 @@
       transform: rotate(-45deg);
       .backtext {
         position: absolute;
+        background: none;
         left: 50%;
         bottom: 0;
+        line-height: 48px;
         margin-left: -34px;
         color: $white;
-        font-size: 32px;
       }
     }
   }
@@ -199,12 +201,12 @@ nav {
     height: 60px;
     position: absolute;
     left: 0;
-    background: url(images/layout/rail.png);
+    background: url(../images/layout/rail.png);
     background-size: cover;
     z-index: 2;
   }
   ul {
-    display: none;
+    //display: none;
     li {
       width: 100%;
       height: 60px;
@@ -214,13 +216,14 @@ nav {
       line-height: 60px;
       transition: all .2s;
       &.nav1 {
-        display: none
+        display: block;
       }
       &:hover {
         background: $textColor;
       }
       a {
         &:hover {
+          text-decoration: none;
           color: $white;
         }
       }
@@ -287,7 +290,7 @@ nav {
 $tags: (n:north, e:east, m:middle, s:south);
 @each $name, $side in $tags {
   .#{$name}tag {
-    background: url(images/#{$side}/tag.png) no-repeat;
+    background: url(../images/#{$side}/tag.png) no-repeat;
     background-size: 100%;
     background-position: 0 3px;
   }

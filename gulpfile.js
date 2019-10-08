@@ -19,27 +19,21 @@ gulp.task('clean', function () {
       .pipe($.clean());
 });
 
-gulp.task('copyHTML', function(){
-  return gulp.src('./source/**/*.html')
-    .pipe($.plumber())
-    .pipe(gulp.dest('./public/'))
-});
-
 gulp.task('jade', function() {
   /* var YOUR_LOCALS = {}; */
   return gulp.src('./source/**/*.jade')
     .pipe($.plumber())
-    .pipe($.data(function(){
-      var menu = require('./source/data/menu.json');
-      var khData = require('./source/data/data.json');
-      var source = {
-        'menu': menu,
-        'khData': khData
-      };
-      // console.log('jade', source);
-      return source;
-      }
-    ))
+    // .pipe($.data(function(){
+    //   var menu = require('./source/data/menu.json');
+    //   var khData = require('./source/data/data.json');
+    //   var source = {
+    //     'menu': menu,
+    //     'khData': khData
+    //   };
+    //   // console.log('jade', source);
+    //   return source;
+    //   }
+    // ))
     .pipe($.jade({
       /* locals: YOUR_LOCALS */
       //pretty: true
@@ -69,6 +63,10 @@ gulp.task('babel', () =>
     .pipe($.babel({
       presets: ['@babel/env']
     }))
+    .pipe($.order([
+      'jquery.rwdImageMaps.min.js',
+      'all.js'
+    ]))
     .pipe($.concat('all.js'))
     .pipe($.if(options.env == 'production', $.uglify({
       compress: {
@@ -81,7 +79,7 @@ gulp.task('babel', () =>
 );
 
 gulp.task('imagemin', function(){
-  return gulp.src('./source/images/*')
+  return gulp.src('./source/images/**/*')
   .pipe($.if(options.env == 'production', $.imagemin()))
   .pipe(gulp.dest('./public/images'))
 })
