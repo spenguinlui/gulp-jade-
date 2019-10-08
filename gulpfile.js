@@ -4,8 +4,6 @@ var autoprefixer = require('autoprefixer');
 var mainBowerFiles = require('main-bower-files');
 var browserSync = require('browser-sync').create();
 var minimist = require('minimist');
-var gulpSequence = require('gulp-sequence');
-
 
 var envOptions = {
   string: 'env',
@@ -20,24 +18,9 @@ gulp.task('clean', function () {
 });
 
 gulp.task('jade', function() {
-  /* var YOUR_LOCALS = {}; */
   return gulp.src('./source/**/*.jade')
     .pipe($.plumber())
-    // .pipe($.data(function(){
-    //   var menu = require('./source/data/menu.json');
-    //   var khData = require('./source/data/data.json');
-    //   var source = {
-    //     'menu': menu,
-    //     'khData': khData
-    //   };
-    //   // console.log('jade', source);
-    //   return source;
-    //   }
-    // ))
-    .pipe($.jade({
-      /* locals: YOUR_LOCALS */
-      //pretty: true
-    }))
+    .pipe($.jade())
     .pipe(gulp.dest('./public/'))
     .pipe(browserSync.stream())
 });
@@ -126,15 +109,11 @@ gulp.task('deploy', function() {
     .pipe($.ghPages());
 });
 
-// gulp.task('build', gulpSequence('clean', 'jade', 'sass', 'babel', 'vendorJs'));
-
-// gulp.task('default', ['jade', 'sass', 'babel', 'browser-sync', 'vendorJs', 'watch']);
-
 gulp.task('build',
   gulp.series(
     'clean',
-    'bower',
-    'vendorJs',
+    // 'bower',
+    // 'vendorJs',
     gulp.parallel('jade', 'sass', 'babel', 'imagemin')
   )
 )
@@ -142,8 +121,8 @@ gulp.task('build',
 gulp.task('default',
   gulp.series(
     'clean',
-    'bower',
-    'vendorJs',
+    // 'bower',
+    // 'vendorJs',  覺得用CDN比較好，先不用
     gulp.parallel('jade', 'sass', 'babel', 'imagemin'),
     function(done){
       browserSync.init({
