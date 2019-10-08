@@ -1,0 +1,144 @@
+.map {
+  display: none;
+  @media screen and (min-width:600px){
+    width: 1200px;
+    height: 760px;
+    background: linear-gradient(180deg,#ffffff40,#ffffff40,#55555580), $notebg;
+    box-shadow: $shadow 5px 10px 10px;
+    position: relative;
+    margin-bottom: 65px;
+    display: block;
+  }
+  &.momap{
+    display: none
+  }
+  .title {
+    font-size: 48px;
+    position: absolute;
+    .stitle {
+      display: none;
+      position: absolute;
+      width: 370px;
+      text-align: center;
+      z-index: 1;
+      &.ap {
+        &:hover {
+          transition: 0.2s ease-in-out;
+          transform-origin: (50,50);
+          transform: scale(1.2);
+        }
+      }
+      @media screen and (min-width:600px){
+        display: block;
+      }
+    }
+  }
+  .fground{
+    width: 1170px;
+    height: 760px;
+    text-align: center;
+    &:before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;  
+    }
+    .ground {
+      display: inline-block;
+      vertical-align: middle;
+      .place {
+        display: none;
+        @media screen and (min-width:600px){
+          display: block;
+        }
+      }
+    }
+  }
+}
+@mixin ground ($w, $h, $img) {
+  width: #{$w}px;
+  height: #{$h}px;
+  background: url(images/taiwan/img-#{$img}.png);
+  background-size: contain;
+}
+#north {
+  .ground {
+    @include ground( 749, 426, 1)
+  }
+}
+#east {
+  .ground {
+    @include ground( 1132, 172, 2)
+  }
+}
+#middle {
+  .ground {
+    @include ground( 895, 350, 3)
+  }
+}
+#south {
+  .ground {
+    @include ground( 932, 313, 4)
+  }
+}
+.cmotag {
+  @media screen and (min-width:600px){
+    margin-top: 60px;
+  }
+}
+@for $i from 1 through 6 {
+  #n_title#{$i} {
+    left: nth($ntl, $i)px;
+    top: nth($ntt, $i)px;
+  }
+}
+@for $i from 1 through 6 {
+  #e_title#{$i} {
+    left: nth($etl, $i)px;
+    top: nth($ett, $i)px;
+  }
+}
+@for $i from 1 through 6 {
+  #m_title#{$i} {
+    left: nth($mtl, $i)px;
+    top: nth($mtt, $i)px;
+  }
+}
+@for $i from 1 through 6 {
+  #s_title#{$i} {
+    left: nth($stl, $i)px;
+    top: nth($stt, $i)px;
+  }
+}
+@for $i from 1 through 6 {
+  #n_place#{$i} {
+    left: nth($npl, $i)px;
+    top: nth($npt, $i)px;
+    width: nth($npl, $i)px;
+    height: nth($npt, $i)px;
+  }
+}
+@for $i from 1 through 6 {
+  #e_place#{$i} {
+    left: nth($epl, $i)px;
+    top: nth($ept, $i)px;
+    width: nth($epl, $i)px;
+    height: nth($ept, $i)px;
+  }
+}
+@for $i from 1 through 6 {
+  #m_place#{$i} {
+    left: nth($mpl, $i)px;
+    top: nth($mpt, $i)px;
+    width: nth($mpl, $i)px;
+    height: nth($mpt, $i)px;
+  }
+}
+@for $i from 1 through 6 {
+  #s_place#{$i} {
+    left: nth($spl, $i)px;
+    top: nth($spt, $i)px;
+    width: nth($spl, $i)px;
+    height: nth($spt, $i)px;
+  }
+}

@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+  font-family: '微軟正黑體',Arial, Helvetica, sans-serif;
+  color: $textColor;
+  padding: 0;
+  margin: 0
+}
+body {
+  width: 100vw;
+  background: url(images/layout/tbg2.jpg);
+  background-size: contain
+}
+a {
+  color: $textColor;
+  text-decoration: none
+}
+.tp {
+  display: none
+}
+
+/*----------------**container start**----------------*/
+.container {
+  position: relative;
+  overflow: hidden;
+  @media screen and (min-width:600px){
+    overflow: visible
+  }
+}
+/*----------------**container end**----------------*/
+footer {
+  background: #360000;
+  color: #ddd;
+  position: fixed;
+  z-index: 9999;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+}
