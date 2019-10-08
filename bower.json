@@ -1,0 +1,22 @@
+{
+  "name": "demo_project",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "spenguinlui <spenguin10@yahoo.com.tw>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "vue": "^2.6.10"
+  }
+}
